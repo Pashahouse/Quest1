@@ -9,12 +9,13 @@ class Qdata_2_1 implements IQData
     static public function data()
     {
         $rules = [
-            'hint1'    => 'Подсказка 1',
-            'hint2'    => 'Подсказка 2',
-            'question' => 'Вопрос номер 1',
+            'hint1'    => 'Тут были зомби',
+            'hint2'    => 'Девушку зовут Эли',
+            'question' => '<p>Что это за игра?</p><img width="256px" src="http://itc.ua/wp-content/uploads/2015/03/TLOU_WinterCoverRender_960p.jpg">',
             'answer'   => [
-                'answer_type'  => 'text',
-                'right_answer' => ['1'],
+                'type'     => 'choice',
+                'variants' => ['Gta V', 'Witcher 3', 'Angry birds', 'Last of Us'],
+                'right_answer' => ['Last of Us'],
             ]
 
         ];

@@ -9,12 +9,12 @@ class Qdata_2_4 implements IQData
     static public function data()
     {
         $rules = [
-            'hint1'    => 'Подсказка 1',
-            'hint2'    => 'Подсказка 2',
-            'question' => 'Вопрос номер 1',
+            'hint1'    => 'Используется движок Yii2',
+            'hint2'    => 'Это не руби',
+            'question' => 'На каком языке написан этот проект?',
             'answer'   => [
-                'answer_type'  => 'text',
-                'right_answer' => ['1'],
+                'type'  => 'text',
+                'right_answer' => ['php'],
             ]
 
         ];

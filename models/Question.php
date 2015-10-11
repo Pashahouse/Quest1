@@ -28,18 +28,25 @@ class Question extends \yii\base\Object
         $qdata = $class::data();
         $this->hint1 = $qdata['hint1'];
         $this->hint2 = $qdata['hint2'];
-        $this->answer = $qdata['answer']['right_answer'];
+        $this->answer = $qdata['answer'];
         $this->question = $qdata['question'];
 
     }
 
     public function check_answer($answer)
     {
-        $answer = str_replace(' ','',mb_strtolower(trim($answer)));
-
-        if (in_array($answer, $this->answer)) {
-            return true;
+        $answer = str_replace(' ', '', mb_strtolower(trim($answer)));
+        if ($this->answer['type'] == 'text') {
+            if (in_array($answer, $this->answer['right_answer'])) {
+                return true;
+            }
         }
+        if ($this->answer['type'] == 'choice' && isset($this->answer['variants'][$answer])) {
+            if (in_array($this->answer['variants'][$answer], $this->answer['right_answer'])) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function give_hint()

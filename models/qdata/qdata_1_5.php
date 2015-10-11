@@ -13,7 +13,7 @@ class Qdata_1_5 implements IQData
             'hint2'    => 'Подсказка 2',
             'question' => 'Вопрос номер 5',
             'answer'   => [
-                'answer_type'  => 'text',
+                'type'  => 'text',
                 'right_answer' => ['1'],
             ]
 

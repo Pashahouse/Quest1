@@ -7,7 +7,6 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use app\models\ContactForm;
 
 class SiteController extends Controller
 {
@@ -74,8 +73,4 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
 }

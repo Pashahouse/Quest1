@@ -5,7 +5,6 @@ namespace app\controllers;
 use app\models\Question;
 use app\models\User;
 use Yii;
-use yii\web\Controller;
 
 
 class QuestController extends BaseController
@@ -13,7 +12,6 @@ class QuestController extends BaseController
     public function actionIndex()
     {
         $user = Yii::$app->user->identity;
-
 
         $question = new Question($user);
         if (Yii::$app->request->post() AND Yii::$app->request->validateCsrfToken()) {
@@ -36,7 +34,6 @@ class QuestController extends BaseController
             'index',
             [
                 'question' => $question,
-
             ]
         );
     }
@@ -50,8 +47,7 @@ class QuestController extends BaseController
 
     public function actionRestart()
     {
-        $user = Yii::$app->user->identity;
-        $user->restartTest();
+        Yii::$app->user->identity->restartTest();
         return $this->redirect(['/quest']);
     }
 }

@@ -11,10 +11,11 @@ class Qdata_2_3 implements IQData
         $rules = [
             'hint1'    => 'Подсказка 1',
             'hint2'    => 'Подсказка 2',
-            'question' => 'Вопрос номер 1',
+            'question' => 'Для какой компании я делал этот сайт',
             'answer'   => [
-                'answer_type'  => 'text',
-                'right_answer' => ['1'],
+                'type'     => 'choice',
+                'variants' => ['ArmoCrm', 'Vkontakte', 'Flying Colors', 'Фонд Иследований Новые Медиа'],
+                'right_answer' => [ 'Flying Colors', ],
             ]
 
         ];
