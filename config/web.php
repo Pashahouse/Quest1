@@ -1,7 +1,6 @@
 <?php
 
 $params = require(__DIR__ . '/params.php');
-
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
@@ -41,13 +40,14 @@ $config = [
 
         'urlManager' => [
             'enablePrettyUrl' => true,
-         //   'showScriptName' => false,
+            'showScriptName' => false,
           //  'rules' => [
           //  ],
         ],
 
     ],
     'params' => $params,
+
 ];
 
 if (YII_ENV_DEV) {

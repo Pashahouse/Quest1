@@ -12,7 +12,7 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 'deleted';
     const STATUS_ACTIVE = 'active';
-
+    const TEST_FINISHED = 0;
 
     /**
      * @inheritdoc
@@ -177,14 +177,35 @@ class User extends ActiveRecord implements IdentityInterface
         $this->token = null;
     }
 
-    public function getSubscribes()
+
+    public function isAdmin()
     {
-        return $this->hasMany(Subscribes::className(), ['id' => 'subscribes_id'])
-            ->viaTable(
-                'user_subscribes',
-                ['user_id' => 'id'])->andWhere(['status' => 'active']);
+        return $this->role == 'admin';
     }
-    public function isAdmin(){
-        return $this->role =='admin';
+
+    public function nextQuestion(Question $question)
+    {
+        $question->flush_hint();
+        $stage_question_count = Yii::$app->params['stages'][$question->stage_id];
+        $stage_count = count(Yii::$app->params['stages']);
+        if ($this->last_question < $stage_question_count) {
+            $this->last_question++;
+        } else {
+            if ($this->last_stage == $stage_count) {
+                $this->last_stage = self::TEST_FINISHED;
+                $this->last_question = self::TEST_FINISHED;
+            } else {
+                $this->last_stage++;
+                $this->last_question = 1;
+            }
+        }
+        $this->save();
+    }
+
+    public function restartTest()
+    {
+        $this->last_stage = 1;
+        $this->last_question = 1;
+        $this->save();
     }
 }

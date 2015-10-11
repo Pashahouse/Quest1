@@ -14,7 +14,7 @@ class Qdata_1_2 implements IQData
             'question' => 'Вопрос номер 2',
             'answer'   => [
                 'answer_type'  => 'text',
-                'right_answer' => ['ответ2'],
+                'right_answer' => ['1'],
             ]
 
         ];

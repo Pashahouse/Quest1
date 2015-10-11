@@ -10,7 +10,7 @@ $this->title = 'Этап' . $question->stage_id . ' вопрос' . $question->i
 
     <div class="row">
         <div class="col-md-12 text-center">
-            <h2>Вопрос №<?= $question->id ?></h2>
+            <h2>Этап <?= $question->stage_id ?> Вопрос <?= $question->id ?>/<?= Yii::$app->params['stages'][$question->stage_id]?></h2>
 
             <?php if (Yii::$app->session->hasFlash('good_news')): ?>
                 <div class="col-lg-12">

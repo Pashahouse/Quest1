@@ -57,4 +57,5 @@ class Question extends \yii\base\Object
         $this->hint_access = 0;
         \Yii::$app->session->remove('hint');
     }
+
 }
