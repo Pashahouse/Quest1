@@ -13,6 +13,18 @@ INSERT INTO `user` (`id`, `email`, `pswd`,`auth_key`,  `name`, `surname`, `role`
 VALUES(1, "briss@yandex.ru", "' . Yii::$app->getSecurity()->generatePasswordHash('test') . '", "' . Yii::$app->getSecurity()->generateRandomString(). '", "Брисс", "Тор", "user", "active", NOW() )
             '
         );
+        $this->execute(
+            '
+INSERT INTO `user` (`id`, `email`, `pswd`,`auth_key`,  `name`, `surname`, `role`, `status`, `created`  )
+VALUES(2, "shakarov@yandex.ru", "' . Yii::$app->getSecurity()->generatePasswordHash('test') . '", "' . Yii::$app->getSecurity()->generateRandomString(). '", " ", "Карен", "user", "active", NOW() )
+            '
+        );
+        $this->execute(
+            '
+INSERT INTO `user` (`id`, `email`, `pswd`,`auth_key`,  `name`, `surname`, `role`, `status`, `created`  )
+VALUES(3, "jack@yandex.ru", "' . Yii::$app->getSecurity()->generatePasswordHash('test') . '", "' . Yii::$app->getSecurity()->generateRandomString(). '", " ", "Джек", "user", "active", NOW() )
+            '
+        );
 
     }
 

@@ -12,7 +12,9 @@ class QuestController extends BaseController
     public function actionIndex()
     {
         $user = Yii::$app->user->identity;
-
+        if ($user->last_stage == User::TEST_FINISHED) {
+            return $this->redirect(['/quest/finished']);
+        }
         $question = new Question($user);
         if (Yii::$app->request->post() AND Yii::$app->request->validateCsrfToken()) {
             $answer = Yii::$app->request->post('answer');

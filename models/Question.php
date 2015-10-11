@@ -35,7 +35,7 @@ class Question extends \yii\base\Object
 
     public function check_answer($answer)
     {
-        $answer = str_replace(' ', '', mb_strtolower(trim($answer)));
+        $answer = str_replace(' ', '', mb_strtolower(trim($answer),'utf-8'));
         if ($this->answer['type'] == 'text') {
             if (in_array($answer, $this->answer['right_answer'])) {
                 return true;

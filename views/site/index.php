@@ -9,7 +9,7 @@ $this->title = 'My Yii Application';
     <div class="jumbotron">
         <h1>Добро пожаловать в мой офигительный квест!</h1>
 
-        <p class="lead">Вы успешно пришлю сюда, ура!</p>
+        <p class="lead">Вы успешно пришли сюда, ура!</p>
 
         <p><a class="btn btn-lg btn-success" href="/quest">Начать</a></p>
     </div>
