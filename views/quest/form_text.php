@@ -4,8 +4,8 @@ echo Html::beginForm();
 echo Html::textInput(
     'answer',
     '',
-    ['autocomplete' => 'off', 'placeholder' => 'Ответ']
+    ['autocomplete' => 'off', 'placeholder' => 'Ответ' 'class' => '']
 );
-echo Html::button('Ответить', ['type' => 'submit','required'=>'required', 'class' => 'btn btn-success']);
+echo Html::button('Ответить', ['type' => 'submit','required'=>'required', 'class' => 'btn  btn-success']);
 echo Html::endForm();
 ?>

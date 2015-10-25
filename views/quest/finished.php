@@ -16,6 +16,6 @@ $this->title = 'Поздравляю, вы классный';
 
             <p><img width="600px" src="http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"></p>
 
-            <p><a class="btn btn-lg btn-success" href="/quest/restart">Начать заново</a></p>
+            <p><a class="btn btn-lg btn-primary" href="/quest/restart">Начать заново</a></p>
         </div>
     </div>
